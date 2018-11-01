@@ -1,0 +1,15 @@
+* Requisitos funcionais
+
+Autenticação de usuário (normal ou root)
+Manutenção de usuários
+Manutenção de eventos (root)
+Manutenção de funcionários
+Manutenção de projetos
+
+* Ferramentas utilizadas
+
+Banco de dados: PostgreSQL (heroku)
+Linguagem de programação do mobile e web: Ionic
+API para utilização no mobile: Java com Jax - RS
+Documentação (documento de requisitos)
+
