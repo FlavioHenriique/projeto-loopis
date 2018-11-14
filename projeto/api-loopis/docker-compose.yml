@@ -1,0 +1,13 @@
+version: "3"
+services:
+  loopisdb:
+    image: loopis/db
+    container_name: "loopisdb"
+    environment:
+      - POSTGRES_DB=loopisdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=loopis
+    volumes:
+      - "./data/postgres:/var/lib/postgresql/data"
+    ports:
+      - 5431:5432

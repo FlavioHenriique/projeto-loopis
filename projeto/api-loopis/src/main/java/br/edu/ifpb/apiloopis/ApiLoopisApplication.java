@@ -1,0 +1,12 @@
+package br.edu.ifpb.apiloopis;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ApiLoopisApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ApiLoopisApplication.class, args);
+    }
+}
