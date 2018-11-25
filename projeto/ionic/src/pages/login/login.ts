@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { Platform, ActionSheetController } from 'ionic-angular';
 
 @Component({
@@ -6,7 +7,7 @@ import { Platform, ActionSheetController } from 'ionic-angular';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  constructor(
+  constructor(public navCtrl: NavController,
     public platform: Platform,
     public actionsheetCtrl: ActionSheetController
   ) { }
@@ -56,5 +57,8 @@ export class LoginPage {
       ]
     });
     actionSheet.present();
+  }
+  proxima(){
+    this.navCtrl.push('CadastroFuncionariosPage',{});
   }
 }

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { Platform, ActionSheetController } from 'ionic-angular';
+import { Platform, ActionSheetController, IonicPage } from 'ionic-angular';
 
 @Component({
   selector: 'page-cadastro',
   templateUrl: 'cadastroFuncionarios.html'
 })
+
 export class CadastroFuncionariosPage {
   constructor(
     public platform: Platform,
