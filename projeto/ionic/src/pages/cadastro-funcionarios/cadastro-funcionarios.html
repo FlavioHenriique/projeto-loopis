@@ -1,8 +1,11 @@
-<ion-header>
-
+<ion-header class="header">
+  <ion-navbar color="primary">
+    <ion-title>LOOPIS</ion-title>
+  </ion-navbar>
 </ion-header>
 
-<ion-content padding class="action-sheets-basic-page">
+
+<ion-content padding class="action-sheets-basic-page body">
   <ion-grid>
     <ion-row justify-content-center align-items-center>
       <h1 id="title">Cadastro de Funcionários</h1>
@@ -16,48 +19,46 @@
 
         <!-- <ion-img width="30" height="30" src="../assets/icon/user.png" ></ion-img> -->
         <ion-item>
-          <ion-label fixed>Nome</ion-label>
+          <ion-label floating>Nome</ion-label>
           <ion-input type="text" value="" id="Nome"></ion-input>
 
         </ion-item>
 
         <ion-item>
-          <ion-label fixed>Email</ion-label>
-          <ion-input type="text" id="Email"></ion-input>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email" id="Email"></ion-input>
         </ion-item>
 
-        <br /><br />
 
         <ion-item>
-          <ion-label fixed>Cargo</ion-label>
+          <ion-label floating>Cargo</ion-label>
           <ion-input type="text" id="Cargo"></ion-input>
         </ion-item>
 
-        <br /><br />
-
         <ion-item>
-          <ion-label fixed>Perfil do Github</ion-label>
+          <ion-label floating>Perfil do Github</ion-label>
           <ion-input type="text" id="perfil"></ion-input>
         </ion-item>
 
-        <br /><br />
-
         <ion-item>
-          <ion-label fixed>Habilidades</ion-label>
+          <ion-label floating>Habilidades</ion-label>
           <ion-input type="text" id="Habilidades"></ion-input>
         </ion-item>
+        <ion-item>
+          <br>
+          <br>
+          <ion-row justify-content-center align-items-center>
+            <button class="btn" ion-button color="primary">CADASTRAR</button>
+            <button class="btn" ion-button color="danger">CANCELAR</button>
+          </ion-row>
+        </ion-item>
+
       </ion-list>
 
-    </ion-row>
-    <br /><br /><br />
 
-    <ion-row justify-content-center align-items-center>
-      <button class="btn" ion-button>CADASTRAR</button>
     </ion-row>
 
-    <ion-row justify-content-center align-items-center>
-      <button class="btn" ion-button>CANCELAR</button>
-    </ion-row>
+
 
   </div>
 </ion-content>
