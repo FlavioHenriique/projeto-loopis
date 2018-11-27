@@ -61,4 +61,7 @@ export class LoginPage {
   proxima(){
     this.navCtrl.push('CadastroFuncionariosPage',{});
   }
+  proximas(){
+    this.navCtrl.push('FuncionariosPage',{});
+  }
 }

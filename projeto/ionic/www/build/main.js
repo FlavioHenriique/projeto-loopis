@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([4],{
 
 /***/ 108:
 /***/ (function(module, exports) {
@@ -23,10 +23,18 @@ webpackEmptyAsyncContext.id = 108;
 var map = {
 	"../pages/cadastro-funcionarios/cadastro-funcionarios.module": [
 		268,
+		3
+	],
+	"../pages/funcionarios/funcionarios.module": [
+		269,
+		2
+	],
+	"../pages/modal/modal.module": [
+		270,
 		1
 	],
 	"../pages/tmailson/tmailson.module": [
-		269,
+		271,
 		0
 	]
 };
@@ -120,12 +128,15 @@ var LoginPage = /** @class */ (function () {
     LoginPage.prototype.proxima = function () {
         this.navCtrl.push('CadastroFuncionariosPage', {});
     };
+    LoginPage.prototype.proximas = function () {
+        this.navCtrl.push('FuncionariosPage', {});
+    };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="action-sheets-basic-page">\n    <ion-grid>\n       <ion-row justify-content-center align-items-center>\n         <h1 id="title">Nome do App</h1>\n       </ion-row>\n    </ion-grid>\n    \n    <div class="form-box">\n      <ion-row  align-items-center justify-content-center>\n          \n        <ion-list class="form">\n\n            <!-- <ion-img width="30" height="30" src="../assets/icon/user.png" ></ion-img> -->\n            <ion-item>\n              \n              <ion-label floating> <ion-icon name="person"></ion-icon>  Email</ion-label>\n              <ion-input type="text" value="" id="Username"></ion-input>\n            </ion-item>\n            \n            <ion-item>\n              <ion-label floating><ion-icon name="lock"></ion-icon>  Senha</ion-label>\n              <ion-input type="password" id="Password"></ion-input>\n            </ion-item>\n            <br/><br/>\n            <ion-item>\n                \n                <ion-label>ROOT</ion-label>\n                <ion-checkbox color="blue" checked="true"></ion-checkbox>\n              </ion-item>\n          </ion-list>  \n      </ion-row>\n      <br/><br/><br/>\n      <ion-row justify-content-center align-items-center>\n          <button class="btn" ion-button>ENTRAR</button>\n          <button class="btn" ion-button (click)="proxima()">Cadastro</button>\n      </ion-row>\n    </div>  \n</ion-content>\n'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/login/login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="action-sheets-basic-page">\n    <ion-grid>\n       <ion-row justify-content-center align-items-center>\n         <h1 id="title">Nome do App</h1>\n       </ion-row>\n    </ion-grid>\n    \n    <div class="form-box">\n      <ion-row  align-items-center justify-content-center>\n          \n        <ion-list class="form">\n\n            <!-- <ion-img width="30" height="30" src="../assets/icon/user.png" ></ion-img> -->\n            <ion-item>\n              \n              <ion-label floating> <ion-icon name="person"></ion-icon>  Email</ion-label>\n              <ion-input type="text" value="" id="Username"></ion-input>\n            </ion-item>\n            \n            <ion-item>\n              <ion-label floating><ion-icon name="lock"></ion-icon>  Senha</ion-label>\n              <ion-input type="password" id="Password"></ion-input>\n            </ion-item>\n            <br/><br/>\n            <ion-item>\n                \n                <ion-label>ROOT</ion-label>\n                <ion-checkbox color="blue" checked="true"></ion-checkbox>\n              </ion-item>\n          </ion-list>  \n      </ion-row>\n      <br/><br/><br/>\n      <ion-row justify-content-center align-items-center>\n          <button class="btn" ion-button>ENTRAR</button>\n          <button class="btn" ion-button (click)="proxima()">Cadastro</button>\n          <button class="btn" ion-button (click)="proximas()">Funcionarios</button>\n      </ion-row>\n    </div>  \n</ion-content>\n'/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/login/login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
     ], LoginPage);
     return LoginPage;
@@ -188,6 +199,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/cadastro-funcionarios/cadastro-funcionarios.module#CadastroFuncionariosPageModule', name: 'CadastroFuncionariosPage', segment: 'cadastro-funcionarios', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/funcionarios/funcionarios.module#FuncionariosPageModule', name: 'FuncionariosPage', segment: 'funcionarios', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal/modal.module#ModalPageModule', name: 'ModalPage', segment: 'modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tmailson/tmailson.module#TmailsonPageModule', name: 'TmailsonPage', segment: 'tmailson', priority: 'low', defaultHistory: [] }
                     ]
                 })
@@ -246,9 +259,9 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());

@@ -1,0 +1,118 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>LOOPIS</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="action-sheets-basic-page">
+      <ion-grid>
+         <ion-row justify-content-center align-items-center>
+           <h1 id="title">Funcionarios</h1>
+         </ion-row>
+      </ion-grid>
+      
+      <ion-card>
+
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="/../assets/imgs/teste.jpeg">
+            </ion-avatar>
+            <h2>Glayterra</h2>
+            <p>Estagiario</p>
+          </ion-item>       
+          <ion-card-content>
+            <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+          </ion-card-content>
+        
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-start primary small>
+               Editar
+              </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button icon-start (click)="presentModal()" primary small >
+                  Detalhes
+                </button>
+            </ion-col>
+            <ion-col center text-center>
+                <button ion-button icon-start color = "danger" small>
+                Excluir    
+                </button>
+            </ion-col>
+          </ion-row>
+        
+        </ion-card>
+
+
+
+        <ion-card>
+
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="/../assets/imgs/teste.jpeg">
+              </ion-avatar>
+              <h2>Glayfogo</h2>
+              <p>Estagiario</p>
+            </ion-item>       
+            <ion-card-content>
+              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+            </ion-card-content>
+          
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-start primary small>
+                 Editar
+                </button>
+              </ion-col>
+              <ion-col>
+                  <button ion-button icon-start (click)="presentModal()" primary small >
+                    Detalhes
+                  </button>
+              </ion-col>
+              <ion-col center text-center>
+                  <button ion-button icon-start color = "danger" small>
+                  Excluir    
+                  </button>
+              </ion-col>
+            </ion-row>
+          
+          </ion-card>
+
+
+
+          <ion-card>
+
+              <ion-item>
+                <ion-avatar item-start>
+                  <img src="/../assets/imgs/teste.jpeg">
+                </ion-avatar>
+                <h2>GlayAgua</h2>
+                <p>Estagiario</p>
+              </ion-item>       
+              <ion-card-content>
+                <p>Habilidades ..... do funcionario</p>
+              </ion-card-content>
+            
+              <ion-row>
+                <ion-col>
+                <button class="btn" ion-button icon-start primary small >
+                    Editar
+                </button>
+                  
+                </ion-col>
+                <ion-col>
+                    <button ion-button icon-start (click)="presentModal()"  primary small >
+                      Detalhes
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <button ion-button icon-start color = "danger" small>
+                    Excluir    
+                    </button>
+                </ion-col>
+              </ion-row>
+            
+            </ion-card>
+  </ion-content>
+  
