@@ -27,7 +27,7 @@ var ModalPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */]),
             ],
         })
     ], ModalPageModule);
@@ -77,7 +77,7 @@ var ModalPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-modal',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/modal/modal.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Nome do Funcionario</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)= "closeModal()">Close</button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding class="action-sheets-basic-page body">\n    \n  \n    <div class="form-box">\n      <ion-row justify-content-center align-items-center>\n  \n        <ion-list class="form">\n          <ion-item>\n            <ion-label floating>Nome</ion-label>\n            <ion-input type="text" value="" id="Nome"></ion-input>\n  \n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Email</ion-label>\n            <ion-input type="email" id="Email"></ion-input>\n          </ion-item>\n  \n  \n          <ion-item>\n            <ion-label floating>Cargo</ion-label>\n            <ion-input type="text" id="Cargo"></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Perfil do Github</ion-label>\n            <ion-input type="text" id="perfil"></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Habilidades</ion-label>\n            <ion-input type="text" id="Habilidades"></ion-input>\n          </ion-item>\n        \n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/modal/modal.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
     ], ModalPage);
     return ModalPage;
 }());

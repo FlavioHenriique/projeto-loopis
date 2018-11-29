@@ -27,7 +27,7 @@ var CadastroFuncionariosPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios__["a" /* CadastroFuncionariosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios__["a" /* CadastroFuncionariosPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios__["a" /* CadastroFuncionariosPage */]),
             ],
         })
     ], CadastroFuncionariosPageModule);
@@ -74,7 +74,7 @@ var CadastroFuncionariosPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-cadastro-funcionarios',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/'<ion-header class="header">\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="action-sheets-basic-page body">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Cadastro de Funcionários</h1>\n    </ion-row>\n  </ion-grid>\n\n  <div class="form-box">\n    <ion-row justify-content-center align-items-center>\n\n      <ion-list class="form">\n        <ion-item>\n          <ion-label floating>Nome</ion-label>\n          <ion-input type="text" value="" id="Nome"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Email</ion-label>\n          <ion-input type="email" id="Email"></ion-input>\n        </ion-item>\n\n\n        <ion-item>\n          <ion-label floating>Cargo</ion-label>\n          <ion-input type="text" id="Cargo"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Perfil do Github</ion-label>\n          <ion-input type="text" id="perfil"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Habilidades</ion-label>\n          <ion-input type="text" id="Habilidades"></ion-input>\n        </ion-item>\n      \n\n\n        <ion-item>\n          <br>\n          <br>\n          <ion-row justify-content-center align-items-center>\n            <button class="btn" ion-button color="primary">CADASTRAR</button>\n            <button class="btn" ion-button color="danger">CANCELAR</button>\n          </ion-row>\n        </ion-item>\n        \n\n      </ion-list>\n\n\n    </ion-row>\n\n\n\n  </div>\n</ion-content>'/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], CadastroFuncionariosPage);
     return CadastroFuncionariosPage;
 }());

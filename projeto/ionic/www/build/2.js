@@ -27,7 +27,7 @@ var FuncionariosPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__funcionarios__["a" /* FuncionariosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__funcionarios__["a" /* FuncionariosPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__funcionarios__["a" /* FuncionariosPage */]),
             ],
         })
     ], FuncionariosPageModule);
@@ -57,8 +57,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var FuncionariosPage = /** @class */ (function () {
-    function FuncionariosPage(modalCtrl) {
+    function FuncionariosPage(modalCtrl, alertCtrl) {
         this.modalCtrl = modalCtrl;
+        this.alertCtrl = alertCtrl;
     }
     FuncionariosPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FuncionariosPage');
@@ -67,13 +68,42 @@ var FuncionariosPage = /** @class */ (function () {
         var modal = this.modalCtrl.create('ModalPage');
         modal.present();
     };
+    FuncionariosPage.prototype.showConfirm = function () {
+        var confirm = this.alertCtrl.create({
+            title: 'Excluir Funcionário',
+            message: 'Tem certeza de que deseja excluir este funcionário?',
+            inputs: [
+                {
+                    type: 'password',
+                    name: 'senha',
+                    placeholder: 'Senha root',
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Cancelar',
+                    handler: function () {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Excluir',
+                    handler: function () {
+                        console.log('Agree clicked');
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
     FuncionariosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-funcionarios',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-title>LOOPIS</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding class="action-sheets-basic-page">\n      <ion-grid>\n         <ion-row justify-content-center align-items-center>\n           <h1 id="title">Funcionarios</h1>\n         </ion-row>\n      </ion-grid>\n      \n      <ion-card>\n\n          <ion-item>\n            <ion-avatar item-start>\n              <img src="/../assets/imgs/teste.jpeg">\n            </ion-avatar>\n            <h2>Glayterra</h2>\n            <p>Estagiario</p>\n          </ion-item>       \n          <ion-card-content>\n            <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>\n          </ion-card-content>\n        \n          <ion-row>\n            <ion-col>\n              <button ion-button icon-start primary small>\n               Editar\n              </button>\n            </ion-col>\n            <ion-col>\n                <button ion-button icon-start (click)="presentModal()" primary small >\n                  Detalhes\n                </button>\n            </ion-col>\n            <ion-col center text-center>\n                <button ion-button icon-start color = "danger" small>\n                Excluir    \n                </button>\n            </ion-col>\n          </ion-row>\n        \n        </ion-card>\n\n\n\n        <ion-card>\n\n            <ion-item>\n              <ion-avatar item-start>\n                <img src="/../assets/imgs/teste.jpeg">\n              </ion-avatar>\n              <h2>Glayfogo</h2>\n              <p>Estagiario</p>\n            </ion-item>       \n            <ion-card-content>\n              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>\n            </ion-card-content>\n          \n            <ion-row>\n              <ion-col>\n                <button ion-button icon-start primary small>\n                 Editar\n                </button>\n              </ion-col>\n              <ion-col>\n                  <button ion-button icon-start (click)="presentModal()" primary small >\n                    Detalhes\n                  </button>\n              </ion-col>\n              <ion-col center text-center>\n                  <button ion-button icon-start color = "danger" small>\n                  Excluir    \n                  </button>\n              </ion-col>\n            </ion-row>\n          \n          </ion-card>\n\n\n\n          <ion-card>\n\n              <ion-item>\n                <ion-avatar item-start>\n                  <img src="/../assets/imgs/teste.jpeg">\n                </ion-avatar>\n                <h2>GlayAgua</h2>\n                <p>Estagiario</p>\n              </ion-item>       \n              <ion-card-content>\n                <p>Habilidades ..... do funcionario</p>\n              </ion-card-content>\n            \n              <ion-row>\n                <ion-col>\n                <button class="btn" ion-button icon-start primary small >\n                    Editar\n                </button>\n                  \n                </ion-col>\n                <ion-col>\n                    <button ion-button icon-start (click)="presentModal()"  primary small >\n                      Detalhes\n                    </button>\n                </ion-col>\n                <ion-col center text-center>\n                    <button ion-button icon-start color = "danger" small>\n                    Excluir    \n                    </button>\n                </ion-col>\n              </ion-row>\n            \n            </ion-card>\n  </ion-content>\n  '/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/,
+            selector: 'page-funcionarios',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-title>LOOPIS</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding class="action-sheets-basic-page">\n      <ion-grid>\n         <ion-row justify-content-center align-items-center>\n           <h1 id="title">Funcionarios</h1>\n         </ion-row>\n      </ion-grid>\n      \n      <ion-card>\n\n          <ion-item>\n            <ion-avatar item-start>\n              <img src="/../assets/imgs/teste.jpeg">\n            </ion-avatar>\n            <h2>Glaymar</h2>\n            <p>Estagiario</p>\n          </ion-item>       \n          <ion-card-content>\n            <p>Habilidades ..... do funcionario</p>\n          </ion-card-content>\n        \n          <ion-row>\n            <ion-col>\n              <button ion-button icon-start primary small>\n               Editar\n              </button>\n            </ion-col>\n            <ion-col center text-center>\n                <button ion-button icon-start (click)="presentModal()" primary small >\n                  Detalhes\n                </button>\n            </ion-col>\n            <ion-col center text-right>\n                <button ion-button icon-start (click)="showConfirm()" color = "danger" small>\n                Excluir    \n                </button>\n            </ion-col>\n          </ion-row>\n        \n        </ion-card>\n\n\n\n        <ion-card>\n\n            <ion-item>\n              <ion-avatar item-start>\n                <img src="/../assets/imgs/teste.jpeg">\n              </ion-avatar>\n              <h2>Mailson</h2>\n              <p>Estagiario</p>\n            </ion-item>       \n            <ion-card-content>\n              <p>Habilidades ..... do funcionario</p>\n            </ion-card-content>\n          \n            <ion-row>\n              <ion-col>\n                <button ion-button icon-start primary small>\n                 Editar\n                </button>\n              </ion-col>\n              <ion-col center text-center>\n                  <button ion-button icon-start (click)="presentModal()" primary small >\n                    Detalhes\n                  </button>\n              </ion-col>\n              <ion-col center text-right>\n                  <button ion-button icon-start (click)="showConfirm()" color = "danger" small>\n                  Excluir    \n                  </button>\n              </ion-col>\n            </ion-row>\n          \n          </ion-card>\n\n\n\n          <ion-card>\n\n              <ion-item>\n                <ion-avatar item-start>\n                  <img src="/../assets/imgs/teste.jpeg">\n                </ion-avatar>\n                <h2>Flávio</h2>\n                <p>Estagiario</p>\n              </ion-item>       \n              <ion-card-content>\n                <p>Habilidades ..... do funcionario</p>\n              </ion-card-content>\n            \n              <ion-row>\n                <ion-col>\n                <button class="btn" ion-button icon-start primary small >\n                    Editar\n                </button>\n                  \n                </ion-col>\n                <ion-col center text-center>\n                    <button ion-button icon-start (click)="presentModal()"  primary small >\n                      Detalhes\n                    </button>\n                </ion-col>\n                <ion-col center text-right>\n                    <button ion-button icon-start (click)="showConfirm()" color = "danger" small>\n                    Excluir    \n                    </button>\n                </ion-col>\n              </ion-row>\n            \n            </ion-card>\n  </ion-content>\n  '/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _b || Object])
     ], FuncionariosPage);
     return FuncionariosPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=funcionarios.js.map

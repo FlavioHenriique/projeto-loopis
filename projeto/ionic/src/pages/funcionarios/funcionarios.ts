@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController } from 'ionic-angular';
+import { IonicPage, ModalController,AlertController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -9,7 +9,7 @@ import { IonicPage, ModalController } from 'ionic-angular';
 })
 export class FuncionariosPage {
 
-  constructor(public modalCtrl: ModalController) { }
+  constructor(public modalCtrl: ModalController,public alertCtrl: AlertController) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FuncionariosPage');
@@ -19,4 +19,32 @@ export class FuncionariosPage {
     modal.present();
   }
 
+  showConfirm() {
+    const confirm = this.alertCtrl.create({
+      title: 'Excluir Funcionário',
+      message: 'Tem certeza de que deseja excluir este funcionário?',
+      inputs: [
+        {
+          type: 'password',
+          name: 'senha',
+          placeholder: 'Senha root',
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Excluir',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
 }
