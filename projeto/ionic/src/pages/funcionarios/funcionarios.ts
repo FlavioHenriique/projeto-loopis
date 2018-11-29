@@ -14,8 +14,9 @@ export class FuncionariosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FuncionariosPage');
   }
-  presentModal() {
-    const modal = this.modalCtrl.create('ModalPage');
+  presentModal(nome) {
+    console.log(nome);
+    const modal = this.modalCtrl.create('ModalPage',{nome: nome});
     modal.present();
   }
 

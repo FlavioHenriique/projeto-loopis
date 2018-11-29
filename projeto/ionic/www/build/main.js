@@ -1,4 +1,4 @@
-webpackJsonp([4],{
+webpackJsonp([3],{
 
 /***/ 108:
 /***/ (function(module, exports) {
@@ -23,18 +23,14 @@ webpackEmptyAsyncContext.id = 108;
 var map = {
 	"../pages/cadastro-funcionarios/cadastro-funcionarios.module": [
 		268,
-		3
+		2
 	],
 	"../pages/funcionarios/funcionarios.module": [
 		269,
-		2
+		1
 	],
 	"../pages/modal/modal.module": [
 		270,
-		1
-	],
-	"../pages/tmailson/tmailson.module": [
-		271,
 		0
 	]
 };
@@ -200,8 +196,7 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/cadastro-funcionarios/cadastro-funcionarios.module#CadastroFuncionariosPageModule', name: 'CadastroFuncionariosPage', segment: 'cadastro-funcionarios', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/funcionarios/funcionarios.module#FuncionariosPageModule', name: 'FuncionariosPage', segment: 'funcionarios', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modal/modal.module#ModalPageModule', name: 'ModalPage', segment: 'modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tmailson/tmailson.module#TmailsonPageModule', name: 'TmailsonPage', segment: 'tmailson', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/modal/modal.module#ModalPageModule', name: 'ModalPage', segment: 'modal', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],

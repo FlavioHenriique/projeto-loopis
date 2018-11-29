@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 271:
+/***/ 270:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TmailsonPageModule", function() { return TmailsonPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalPageModule", function() { return ModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tmailson__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal__ = __webpack_require__(273);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TmailsonPageModule = /** @class */ (function () {
-    function TmailsonPageModule() {
+var ModalPageModule = /** @class */ (function () {
+    function ModalPageModule() {
     }
-    TmailsonPageModule = __decorate([
+    ModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__tmailson__["a" /* TmailsonPage */],
+                __WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tmailson__["a" /* TmailsonPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal__["a" /* ModalPage */]),
             ],
         })
-    ], TmailsonPageModule);
-    return TmailsonPageModule;
+    ], ModalPageModule);
+    return ModalPageModule;
 }());
 
-//# sourceMappingURL=tmailson.module.js.map
+//# sourceMappingURL=modal.module.js.map
 
 /***/ }),
 
-/***/ 275:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TmailsonPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,29 +57,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the TmailsonPage page.
+ * Generated class for the ModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var TmailsonPage = /** @class */ (function () {
-    function TmailsonPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
+var ModalPage = /** @class */ (function () {
+    function ModalPage(navParams, view) {
         this.navParams = navParams;
+        this.view = view;
+        console.log(navParams.get('nome'));
+        //document.getElementById("funcionario").innerHTML =  navParams.get('nome');  
     }
-    TmailsonPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad TmailsonPage');
+    ModalPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ModalPage');
     };
-    TmailsonPage = __decorate([
+    ModalPage.prototype.closeModal = function () {
+        this.view.dismiss();
+    };
+    ModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tmailson',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/tmailson/tmailson.html"*/'<!--\n  Generated template for the TmailsonPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>tmailson</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/tmailson/tmailson.html"*/,
+            selector: 'page-modal',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/modal/modal.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title id="funcionario">Nome do Funcionario</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)= "closeModal()">Close</button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding class="action-sheets-basic-page body">\n    \n  \n    <div class="form-box">\n      <ion-row justify-content-center align-items-center>\n        <ion-list class="form">\n          <br/><br/>\n          <ion-item>\n            <ion-label>Nome: Mailson Dennis</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Email: mailsondennis@gmail.com</ion-label>\n          </ion-item>\n\n          <ion-item>\n            <ion-label>Cargo: Estagiario</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Perfil do Github: MailsonD</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Habilidades:<br>\n                <ul>\n                  <li>HTML5</li>\n                  <li>CSS3</li>\n                  <li>Linguagem C</li>\n                  <li>JavaScript</li>\n                  <li>Java SE</li>\n                  <li>Ionic</li>\n                </ul>\n            </ion-label>\n          </ion-item>\n        \n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/modal/modal.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], TmailsonPage);
-    return TmailsonPage;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]) === "function" && _b || Object])
+    ], ModalPage);
+    return ModalPage;
+    var _a, _b;
 }());
 
-//# sourceMappingURL=tmailson.js.map
+//# sourceMappingURL=modal.js.map
 
 /***/ })
 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, ViewController } from 'ionic-angular';
+import * as $ from 'jquery';
+
 
 /**
  * Generated class for the ModalPage page.
@@ -20,6 +22,8 @@ import { IonicPage, NavParams, ViewController } from 'ionic-angular';
 export class ModalPage {
 
   constructor(private navParams: NavParams, private view: ViewController) {
+    console.log( navParams.get('nome'));
+    //document.getElementById("funcionario").innerHTML =  navParams.get('nome');  
   }
 
   ionViewDidLoad() {
