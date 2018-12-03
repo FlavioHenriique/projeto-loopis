@@ -3,7 +3,7 @@ import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { Platform, ActionSheetController } from 'ionic-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-
+import { Funcionario } from '../../model/Funcionario';
 
 @Component({
   selector: 'page-login',
@@ -11,36 +11,39 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginPage {
 
-  email: string;
-  senha: string;
+  root: boolean;
+  funcionario: Funcionario;
 
   constructor(public navCtrl: NavController,
     public platform: Platform,
     public actionsheetCtrl: ActionSheetController,
     public toast: ToastController,
     public http: HttpClient
-  ) { }
+  ) {
+    this.funcionario = new Funcionario();
+  }
 
-  login(){
-    let json = {email:this.email, senha: this.senha, tipo:'NORMAL'};
+  login() {
+    this.funcionario.tipo = (this.root) ? 'ROOT' : 'NORMAL';
+    //let json = { email: this.email, senha: this.senha, tipo: tipo };
     let url = "http://localhost:8081/funcionarios/login";
-    this.http.post(url, json, {observe: 'response'}).subscribe(res=>{
-      if(res.status != 200){
+    this.http.post(url, this.funcionario, { observe: 'response' }).subscribe(res => {
+      if (res.status != 200) {
         this.criarToast("Usuário não encontrado!");
-      }else{
-        console.log(res.body);
+      } else {
+        this.funcionario = res.body;
       }
     });
   }
-  
-  proxima(){
-    this.navCtrl.push('CadastroFuncionariosPage',{});
+
+  proxima() {
+    this.navCtrl.push('CadastroFuncionariosPage', {});
   }
-  proximas(){
-    this.navCtrl.push('FuncionariosPage',{});
+  proximas() {
+    this.navCtrl.push('FuncionariosPage', {});
   }
 
-  criarToast(msg:string){
+  criarToast(msg: string) {
     this.toast.create({
       message: msg,
       duration: 3000,
