@@ -12,14 +12,13 @@
     </ion-row>
   </ion-grid>
 
-  <div class="form-box">
-    <ion-row justify-content-center align-items-center>
+  <ion-card>
+    <ion-row align-items-center>
 
       <ion-list class="form">
         <ion-item>
           <ion-label floating>Nome</ion-label>
           <ion-input type="text" value="" id="Nome"></ion-input>
-
         </ion-item>
 
         <ion-item>
@@ -27,6 +26,10 @@
           <ion-input type="email" id="Email"></ion-input>
         </ion-item>
 
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="password" value="" id="Nome"></ion-input>
+        </ion-item>
 
         <ion-item>
           <ion-label floating>Cargo</ion-label>
@@ -42,7 +45,7 @@
           <ion-label floating>Habilidades</ion-label>
           <ion-input type="text" id="Habilidades"></ion-input>
         </ion-item>
-      
+
 
 
         <ion-item>
@@ -53,14 +56,11 @@
             <button class="btn" ion-button color="danger">CANCELAR</button>
           </ion-row>
         </ion-item>
-        
+
 
       </ion-list>
 
 
     </ion-row>
-
-
-
-  </div>
+  </ion-card>
 </ion-content>

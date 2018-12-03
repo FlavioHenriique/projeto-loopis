@@ -36,9 +36,10 @@ export class LoginPage {
     });
   }
 
-  proxima() {
+  cadastrarFuncionario() {
     this.navCtrl.push('CadastroFuncionariosPage', {});
   }
+
   proximas() {
     this.navCtrl.push('FuncionariosPage', {});
   }
