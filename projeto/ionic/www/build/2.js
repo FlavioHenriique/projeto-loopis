@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 268:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroFuncionariosPageModule", function() { return CadastroFuncionariosPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios__ = __webpack_require__(277);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,13 +38,13 @@ var CadastroFuncionariosPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 271:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroFuncionariosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72,7 +72,7 @@ var CadastroFuncionariosPage = /** @class */ (function () {
     };
     CadastroFuncionariosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro-funcionarios',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/'<ion-header class="header">\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="action-sheets-basic-page body">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Cadastro de Funcionários</h1>\n    </ion-row>\n  </ion-grid>\n\n  <div class="form-box">\n    <ion-row justify-content-center align-items-center>\n\n      <ion-list class="form">\n        <ion-item>\n          <ion-label floating>Nome</ion-label>\n          <ion-input type="text" value="" id="Nome"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Email</ion-label>\n          <ion-input type="email" id="Email"></ion-input>\n        </ion-item>\n\n\n        <ion-item>\n          <ion-label floating>Cargo</ion-label>\n          <ion-input type="text" id="Cargo"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Perfil do Github</ion-label>\n          <ion-input type="text" id="perfil"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Habilidades</ion-label>\n          <ion-input type="text" id="Habilidades"></ion-input>\n        </ion-item>\n      \n\n\n        <ion-item>\n          <br>\n          <br>\n          <ion-row justify-content-center align-items-center>\n            <button class="btn" ion-button color="primary">CADASTRAR</button>\n            <button class="btn" ion-button color="danger">CANCELAR</button>\n          </ion-row>\n        </ion-item>\n        \n\n      </ion-list>\n\n\n    </ion-row>\n\n\n\n  </div>\n</ion-content>'/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/,
+            selector: 'page-cadastro-funcionarios',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/'<ion-header class="header">\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="action-sheets-basic-page body">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Cadastro de Funcionários</h1>\n    </ion-row>\n  </ion-grid>\n\n  <div class="form-box">\n    <ion-row justify-content-center align-items-center>\n\n      <ion-list class="form">\n        <ion-item>\n          <ion-label floating>Nome</ion-label>\n          <ion-input type="text" value="" id="Nome"></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Email</ion-label>\n          <ion-input type="email" id="Email"></ion-input>\n        </ion-item>\n\n\n        <ion-item>\n          <ion-label floating>Cargo</ion-label>\n          <ion-input type="text" id="Cargo"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Perfil do Github</ion-label>\n          <ion-input type="text" id="perfil"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Habilidades</ion-label>\n          <ion-input type="text" id="Habilidades"></ion-input>\n        </ion-item>\n      \n\n\n        <ion-item>\n          <br>\n          <br>\n          <ion-row justify-content-center align-items-center>\n            <button class="btn" ion-button color="primary">CADASTRAR</button>\n            <button class="btn" ion-button color="danger">CANCELAR</button>\n          </ion-row>\n        </ion-item>\n        \n\n      </ion-list>\n\n\n    </ion-row>\n\n\n\n  </div>\n</ion-content>'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], CadastroFuncionariosPage);

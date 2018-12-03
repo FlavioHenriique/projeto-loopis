@@ -1,67 +1,50 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { Platform, ActionSheetController } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
 export class LoginPage {
+
+  email: string;
+  senha: string;
+
   constructor(public navCtrl: NavController,
     public platform: Platform,
-    public actionsheetCtrl: ActionSheetController
+    public actionsheetCtrl: ActionSheetController,
+    public toast: ToastController,
+    public http: HttpClient
   ) { }
 
-  openMenu() {
-    let actionSheet = this.actionsheetCtrl.create({
-      title: 'Albums',
-      cssClass: 'action-sheets-basic-page',
-      buttons: [
-        {
-          text: 'Delete',
-          role: 'destructive',
-          icon: !this.platform.is('ios') ? 'trash' : null,
-          handler: () => {
-            console.log('Delete clicked');
-          }
-        },
-        {
-          text: 'Share',
-          icon: !this.platform.is('ios') ? 'share' : null,
-          handler: () => {
-            console.log('Share clicked');
-          }
-        },
-        {
-          text: 'Play',
-          icon: !this.platform.is('ios') ? 'arrow-dropright-circle' : null,
-          handler: () => {
-            console.log('Play clicked');
-          }
-        },
-        {
-          text: 'Favorite',
-          icon: !this.platform.is('ios') ? 'heart-outline' : null,
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel', // will always sort to be on the bottom
-          icon: !this.platform.is('ios') ? 'close' : null,
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
+  login(){
+    let json = {email:this.email, senha: this.senha, tipo:'NORMAL'};
+    let url = "http://localhost:8081/funcionarios/login";
+    this.http.post(url, json, {observe: 'response'}).subscribe(res=>{
+      if(res.status != 200){
+        this.criarToast("Usuário não encontrado!");
+      }else{
+        console.log(res.body);
+      }
     });
-    actionSheet.present();
   }
+  
   proxima(){
     this.navCtrl.push('CadastroFuncionariosPage',{});
   }
   proximas(){
     this.navCtrl.push('FuncionariosPage',{});
+  }
+
+  criarToast(msg:string){
+    this.toast.create({
+      message: msg,
+      duration: 3000,
+      position: 'middle'
+    }).present();
   }
 }
