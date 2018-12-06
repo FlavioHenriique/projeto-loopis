@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController,AlertController } from 'ionic-angular';
+import { Funcionario } from '../../model/Funcionario';
 
 
 @IonicPage()
@@ -8,6 +9,9 @@ import { IonicPage, ModalController,AlertController } from 'ionic-angular';
   templateUrl: 'funcionarios.html',
 })
 export class FuncionariosPage {
+
+  root: boolean;
+  funcionario: Funcionario;
 
   constructor(public modalCtrl: ModalController,public alertCtrl: AlertController) { }
 

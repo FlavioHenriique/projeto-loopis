@@ -18,41 +18,44 @@
       <ion-list class="form">
         <ion-item>
           <ion-label floating>Nome</ion-label>
-          <ion-input type="text" value="" id="Nome"></ion-input>
+          <ion-input type="text" value="" id="Nome" [(ngModel)]="funcionario.nome"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Email</ion-label>
-          <ion-input type="email" id="Email"></ion-input>
+          <ion-input type="email" id="Email" [(ngModel)]="funcionario.email"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Senha</ion-label>
-          <ion-input type="password" value="" id="Nome"></ion-input>
+          <ion-input type="password" value="" id="Nome" [(ngModel)]="funcionario.senha"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Cargo</ion-label>
-          <ion-input type="text" id="Cargo"></ion-input>
+          <ion-input type="text" id="Cargo" [(ngModel)]="funcionario.cargo"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Perfil do Github</ion-label>
-          <ion-input type="text" id="perfil"></ion-input>
+          <ion-input type="text" id="perfil" [(ngModel)]="funcionario.perfilGithub"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Habilidades</ion-label>
-          <ion-input type="text" id="Habilidades"></ion-input>
+          <ion-input type="text" id="Habilidades" [(ngModel)]="funcionario.habilidades"></ion-input>
         </ion-item>
 
-
+        <ion-item>
+          <ion-label>ROOT</ion-label>
+          <ion-checkbox color="blue" checked="true" [(ngModel)]="root"></ion-checkbox>
+        </ion-item>
 
         <ion-item>
           <br>
           <br>
           <ion-row justify-content-center align-items-center>
-            <button class="btn" ion-button color="primary">CADASTRAR</button>
+            <button class="btn" ion-button color="primary" (click)="cadastrar()">CADASTRAR</button>
             <button class="btn" ion-button color="danger">CANCELAR</button>
           </ion-row>
         </ion-item>
