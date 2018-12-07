@@ -35,7 +35,7 @@ export class CadastroFuncionariosPage {
 
   cadastrar(){
     this.funcionario.tipo = (this.root) ? 'ROOT' : 'NORMAL';
-    let url = "http://localhost:8081/funcionarios/salvar";
+    let url = "http://localhost:8081/funcionarios/";
     this.http.post(url, this.funcionario, { observe: 'response' }).subscribe(res => {
       if (res.status != 200) {
         this.presentAlert();

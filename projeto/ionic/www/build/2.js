@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroFuncionariosPageModule", function() { return CadastroFuncionariosPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FuncionariosPageModule", function() { return FuncionariosPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__funcionarios__ = __webpack_require__(280);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroFuncionariosPageModule = /** @class */ (function () {
-    function CadastroFuncionariosPageModule() {
+var FuncionariosPageModule = /** @class */ (function () {
+    function FuncionariosPageModule() {
     }
-    CadastroFuncionariosPageModule = __decorate([
+    FuncionariosPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios__["a" /* CadastroFuncionariosPage */],
+                __WEBPACK_IMPORTED_MODULE_2__funcionarios__["a" /* FuncionariosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios__["a" /* CadastroFuncionariosPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__funcionarios__["a" /* FuncionariosPage */]),
             ],
         })
-    ], CadastroFuncionariosPageModule);
-    return CadastroFuncionariosPageModule;
+    ], FuncionariosPageModule);
+    return FuncionariosPageModule;
 }());
 
-//# sourceMappingURL=cadastro-funcionarios.module.js.map
+//# sourceMappingURL=funcionarios.module.js.map
 
 /***/ }),
 
-/***/ 278:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroFuncionariosPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FuncionariosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_Funcionario__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,60 +56,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
-/**
- * Generated class for the CadastroFuncionariosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var CadastroFuncionariosPage = /** @class */ (function () {
-    function CadastroFuncionariosPage(navCtrl, navParams, http, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.http = http;
+var FuncionariosPage = /** @class */ (function () {
+    function FuncionariosPage(modalCtrl, alertCtrl) {
+        this.modalCtrl = modalCtrl;
         this.alertCtrl = alertCtrl;
-        this.funcionario = new __WEBPACK_IMPORTED_MODULE_2__model_Funcionario__["a" /* Funcionario */]();
     }
-    CadastroFuncionariosPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CadastroFuncionariosPage');
+    FuncionariosPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad FuncionariosPage');
     };
-    CadastroFuncionariosPage.prototype.cadastrar = function () {
-        var _this = this;
-        this.funcionario.tipo = (this.root) ? 'ROOT' : 'NORMAL';
-        var url = "http://localhost:8081/funcionarios/salvar";
-        this.http.post(url, this.funcionario, { observe: 'response' }).subscribe(function (res) {
-            if (res.status != 200) {
-                _this.presentAlert();
-            }
-            else {
-                console.log("foi");
-            }
+    FuncionariosPage.prototype.presentModal = function (nome) {
+        console.log(nome);
+        var modal = this.modalCtrl.create('ModalPage', { nome: nome });
+        modal.present();
+    };
+    FuncionariosPage.prototype.showConfirm = function () {
+        var confirm = this.alertCtrl.create({
+            title: 'Excluir Funcionário',
+            message: 'Tem certeza de que deseja excluir este funcionário?',
+            inputs: [
+                {
+                    type: 'password',
+                    name: 'senha',
+                    placeholder: 'Senha root',
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Cancelar',
+                    handler: function () {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Excluir',
+                    handler: function () {
+                        console.log('Agree clicked');
+                    }
+                }
+            ]
         });
+        confirm.present();
     };
-    CadastroFuncionariosPage.prototype.presentAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Low battery',
-            subTitle: '10% of battery remaining',
-            buttons: ['Dismiss']
-        });
-        alert.present();
-    };
-    CadastroFuncionariosPage = __decorate([
+    FuncionariosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro-funcionarios',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/'<ion-header class="header">\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="action-sheets-basic-page body">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Cadastro de Funcionários</h1>\n    </ion-row>\n  </ion-grid>\n\n  <ion-card>\n    <ion-row align-items-center>\n\n      <ion-list class="form">\n        <ion-item>\n          <ion-label floating>Nome</ion-label>\n          <ion-input type="text" value="" id="Nome" [(ngModel)]="funcionario.nome"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Email</ion-label>\n          <ion-input type="email" id="Email" [(ngModel)]="funcionario.email"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Senha</ion-label>\n          <ion-input type="password" value="" id="Nome" [(ngModel)]="funcionario.senha"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Cargo</ion-label>\n          <ion-input type="text" id="Cargo" [(ngModel)]="funcionario.cargo"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Perfil do Github</ion-label>\n          <ion-input type="text" id="perfil" [(ngModel)]="funcionario.perfilGithub"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Habilidades</ion-label>\n          <ion-input type="text" id="Habilidades" [(ngModel)]="funcionario.habilidades"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label>ROOT</ion-label>\n          <ion-checkbox color="blue" checked="true" [(ngModel)]="root"></ion-checkbox>\n        </ion-item>\n\n        <ion-item>\n          <br>\n          <br>\n          <ion-row justify-content-center align-items-center>\n            <button class="btn" ion-button color="primary" (click)="cadastrar()">CADASTRAR</button>\n            <button class="btn" ion-button color="danger">CANCELAR</button>\n          </ion-row>\n        </ion-item>\n\n\n      </ion-list>\n\n\n    </ion-row>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/home/loopis/Documents/Mailson/Ionic/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/,
+            selector: 'page-funcionarios',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="action-sheets-basic-page">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Funcionarios</h1>\n    </ion-row>\n  </ion-grid>\n\n  <ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>Glaymar</h2>\n      <p>Estagiario</p>\n    </ion-item>\n    <ion-card-content>\n      <p>Habilidades ..... do funcionario</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button ion-button icon-start primary small>\n          Editar\n        </button>\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(\'glaymar\')" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small>\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>Mailson</h2>\n      <p>Estagiario</p>\n    </ion-item>\n    <ion-card-content>\n      <p>Habilidades ..... do funcionario</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button ion-button icon-start primary small>\n          Editar\n        </button>\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(\'Mailson\')" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small>\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>Flávio</h2>\n      <p>Estagiario</p>\n    </ion-item>\n    <ion-card-content>\n      <p>Habilidades ..... do funcionario</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button class="btn" ion-button icon-start primary small>\n          Editar\n        </button>\n\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(\'Flávio\')" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small>\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
-    ], CadastroFuncionariosPage);
-    return CadastroFuncionariosPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
+    ], FuncionariosPage);
+    return FuncionariosPage;
 }());
 
-//# sourceMappingURL=cadastro-funcionarios.js.map
+//# sourceMappingURL=funcionarios.js.map
 
 /***/ })
 

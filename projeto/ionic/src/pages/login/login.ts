@@ -32,6 +32,7 @@ export class LoginPage {
         this.criarToast("Usuário não encontrado!");
       } else {
         this.funcionario = res.body;
+        this.navCtrl.push('InicialPage', {funcionario: this.funcionario});
       }
     });
   }
