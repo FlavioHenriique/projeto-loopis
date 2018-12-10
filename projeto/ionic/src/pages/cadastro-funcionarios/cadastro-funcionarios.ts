@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Funcionario } from '../../model/Funcionario';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
+import {Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 /**
  * Generated class for the CadastroFuncionariosPage page.
@@ -20,13 +21,37 @@ export class CadastroFuncionariosPage {
 
   root: boolean;
   funcionario: Funcionario;
+  validations_form : FormGroup;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public http: HttpClient,
-    private alertCtrl: AlertController) 
+    private alertCtrl: AlertController,
+    private formBuilder: FormBuilder) 
     {
     this.funcionario = new Funcionario();
+    
+  }
+
+  ngOnInit(): any {
+    this.validations_form = this.formBuilder.group({
+      nome: new FormControl('', [Validators.required, Validators.minLength(3), this.nameValidator.bind(this)]),
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ]))
+   });
+  }
+
+  isValid(field: string) {
+    let formField = this.validations_form.get(field);
+    return formField.valid || formField.pristine;
+  }
+
+  nameValidator(control: FormControl): {[s: string]: boolean} {
+    if (!control.value.match("^[a-zA-Z ,.'-]+$")) {
+      return {invalidName: true};
+    }
   }
 
   ionViewDidLoad() {
@@ -35,7 +60,7 @@ export class CadastroFuncionariosPage {
 
   cadastrar(){
     this.funcionario.tipo = (this.root) ? 'ROOT' : 'NORMAL';
-    let url = "http://localhost:8081/funcionarios/";
+    let url = "http://localhost:8081/funcionarios/cadastrar";
     this.http.post(url, this.funcionario, { observe: 'response' }).subscribe(res => {
       if (res.status != 200) {
         this.presentAlert();
