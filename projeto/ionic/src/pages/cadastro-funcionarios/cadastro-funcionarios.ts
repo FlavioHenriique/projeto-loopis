@@ -35,27 +35,15 @@ export class CadastroFuncionariosPage {
 
   ngOnInit(): any {
     this.validations_form = this.formBuilder.group({
-      nome: new FormControl('', [Validators.required, Validators.minLength(3), this.nameValidator.bind(this)]),
+      nome: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3)
+      ]),
       email: new FormControl('', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ]))
    });
-  }
-
-  isValid(field: string) {
-    let formField = this.validations_form.get(field);
-    return formField.valid || formField.pristine;
-  }
-
-  nameValidator(control: FormControl): {[s: string]: boolean} {
-    if (!control.value.match("^[a-zA-Z ,.'-]+$")) {
-      return {invalidName: true};
-    }
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroFuncionariosPage');
   }
 
   cadastrar(){

@@ -14,48 +14,48 @@
 
   <ion-card>
     <ion-row align-items-center>
-      <form (ngSubmit)="cadastrar()" [formGroup]="validations_form">
-        <ion-list class="form">
+      <form  class="form" (ngSubmit)="cadastrar()" #loginForm="ngForm">
+        <ion-list >
           <ion-item>
             <ion-label floating>Nome</ion-label>
-            <ion-input type="text" name="nome" formControlName="nome" [(ngModel)]="funcionario.nome" aria-required="true"></ion-input>
+            <ion-input type="text" name="nome"  [(ngModel)]="funcionario.nome" required></ion-input>
           </ion-item>
-          <p *ngIf="!isValid('nome')" danger padding-left>Invalid nome</p>
+          <!-- <p *ngIf="!isValid('nome')" danger padding-left>Invalid nome</p> -->
           <ion-item>
             <ion-label floating>Email</ion-label>
-            <ion-input type="email" name="email" [(ngModel)]="funcionario.email" [ngModelOptions]="{standalone: true}" aria-required="true"></ion-input>
+            <ion-input type="email" name="email" [(ngModel)]="funcionario.email" required></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label floating>Senha</ion-label>
-            <ion-input type="password" name="senha" [(ngModel)]="funcionario.senha" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-input type="password" name="senha" [(ngModel)]="funcionario.senha"></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label floating>Cargo</ion-label>
-            <ion-input type="text" name="cargo" [(ngModel)]="funcionario.cargo" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-input type="text" name="cargo" [(ngModel)]="funcionario.cargo" ></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label floating>Perfil do Github</ion-label>
-            <ion-input type="text" name="perfilGithub" [(ngModel)]="funcionario.perfilGithub" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-input type="text" name="perfilGithub" [(ngModel)]="funcionario.perfilGithub" ></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label floating>Habilidades</ion-label>
-            <ion-input type="text" name="habilidades" [(ngModel)]="funcionario.habilidades" [ngModelOptions]="{standalone: true}"></ion-input>
+            <ion-input type="text" name="habilidades" [(ngModel)]="funcionario.habilidades" ></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label>ROOT</ion-label>
-            <ion-checkbox color="blue" name="root" checked="true" [(ngModel)]="root" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            <ion-checkbox color="blue" name="root" checked="true" [(ngModel)]="root" ></ion-checkbox>
           </ion-item>
   
           <ion-item>
             <br>
             <br>
             <ion-row justify-content-center align-items-center>
-              <button type="submit" ion-button color="primary" >CADASTRAR</button>
+              <button type="submit" [disabled]="loginForm.invalid" ion-button color="primary" >CADASTRAR</button>
               <button ion-button color="danger">CANCELAR</button>
             </ion-row>
           </ion-item>
