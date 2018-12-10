@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Funcionario } from '../../model/Funcionario';
 
 
-
 @IonicPage()
 @Component({
   selector: 'page-inicial',

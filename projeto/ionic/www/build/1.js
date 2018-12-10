@@ -58,12 +58,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the InicialPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 var InicialPage = /** @class */ (function () {
     function InicialPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
@@ -77,10 +71,9 @@ var InicialPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-inicial',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/inicial/inicial.html"*/'\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS - Página inicial</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\nnome: {{funcionario.nome}}\n</ion-content>\n'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/inicial/inicial.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], InicialPage);
     return InicialPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=inicial.js.map
