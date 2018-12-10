@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Funcionario } from '../../model/Funcionario';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
-import {Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 /**
  * Generated class for the CadastroFuncionariosPage page.
@@ -21,16 +21,15 @@ export class CadastroFuncionariosPage {
 
   root: boolean;
   funcionario: Funcionario;
-  validations_form : FormGroup;
+  validations_form: FormGroup;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public http: HttpClient,
     private alertCtrl: AlertController,
-    private formBuilder: FormBuilder) 
-    {
+    private formBuilder: FormBuilder) {
     this.funcionario = new Funcionario();
-    
+
   }
 
   ngOnInit(): any {
@@ -43,17 +42,17 @@ export class CadastroFuncionariosPage {
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ]))
-   });
+    });
   }
 
-  cadastrar(){
+  cadastrar() {
     this.funcionario.tipo = (this.root) ? 'ROOT' : 'NORMAL';
-    let url = "http://localhost:8081/funcionarios/cadastrar";
+    let url = "http://localhost:8081/funcionarios/";
     this.http.post(url, this.funcionario, { observe: 'response' }).subscribe(res => {
-      if (res.status != 200) {
-        this.presentAlert();
+      if (res.status == 202) {
+        this.presentAlert("Erro","Email já cadastrado!");
       } else {
-        console.log("foi");
+        this.presentAlert("OK!","Funcionário cadastrado com sucesso!");
       }
     });
   }
@@ -62,10 +61,10 @@ export class CadastroFuncionariosPage {
     this.navCtrl.pop();
   }
 
-  presentAlert() {
+  presentAlert(titulo, msg) {
     let alert = this.alertCtrl.create({
-      title: 'Error',
-      subTitle: 'Algo de errado não está certo',
+      title: titulo,
+      subTitle: msg,
       buttons: ['Ok']
     });
     alert.present();
