@@ -18,32 +18,33 @@
         <ion-list >
           <ion-item>
             <ion-label floating>Nome</ion-label>
-            <ion-input type="text" name="nome"  [(ngModel)]="funcionario.nome" required></ion-input>
+            <ion-input type="text" name="nome" [(ngModel)]="funcionario.nome" required minlength = '2' maxlength="50"></ion-input>
           </ion-item>
-          <!-- <p *ngIf="!isValid('nome')" danger padding-left>Invalid nome</p> -->
           <ion-item>
             <ion-label floating>Email</ion-label>
-            <ion-input type="email" name="email" [(ngModel)]="funcionario.email" required></ion-input>
+            <ion-input type="email" name="email" [(ngModel)]="funcionario.email" 
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`~-]+@[a-z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" 
+            required></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label floating>Senha</ion-label>
-            <ion-input type="password" name="senha" [(ngModel)]="funcionario.senha"></ion-input>
+            <ion-input type="password" name="senha" [(ngModel)]="funcionario.senha" required minlength= '8'></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label floating>Cargo</ion-label>
-            <ion-input type="text" name="cargo" [(ngModel)]="funcionario.cargo" ></ion-input>
+            <ion-input type="text" name="cargo" [(ngModel)]="funcionario.cargo" required minlength= '7'></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label floating>Perfil do Github</ion-label>
-            <ion-input type="text" name="perfilGithub" [(ngModel)]="funcionario.perfilGithub" ></ion-input>
+            <ion-input type="text" name="perfilGithub" [(ngModel)]="funcionario.perfilGithub" required minlength= '2' maxlength = '100' ></ion-input>
           </ion-item>
   
           <ion-item>
             <ion-label floating>Habilidades</ion-label>
-            <ion-input type="text" name="habilidades" [(ngModel)]="funcionario.habilidades" ></ion-input>
+            <ion-input type="text" name="habilidades" [(ngModel)]="funcionario.habilidades" required></ion-input>
           </ion-item>
   
           <ion-item>
@@ -56,7 +57,7 @@
             <br>
             <ion-row justify-content-center align-items-center>
               <button type="submit" [disabled]="loginForm.invalid" ion-button color="primary" >CADASTRAR</button>
-              <button ion-button color="danger">CANCELAR</button>
+              <button ion-button color="danger" (click)="goBack()">CANCELAR</button>
             </ion-row>
           </ion-item>
         </ion-list>

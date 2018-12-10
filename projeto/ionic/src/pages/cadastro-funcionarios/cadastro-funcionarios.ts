@@ -58,11 +58,15 @@ export class CadastroFuncionariosPage {
     });
   }
 
+  goBack() {
+    this.navCtrl.pop();
+  }
+
   presentAlert() {
     let alert = this.alertCtrl.create({
-      title: 'Low battery',
-      subTitle: '10% of battery remaining',
-      buttons: ['Dismiss']
+      title: 'Error',
+      subTitle: 'Algo de errado não está certo',
+      buttons: ['Ok']
     });
     alert.present();
   }
