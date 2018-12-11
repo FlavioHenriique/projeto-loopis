@@ -80,10 +80,13 @@ var CadastroFuncionariosPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-cadastro-funcionarios',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/'<ion-header class="header">\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="action-sheets-basic-page body">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Cadastro de Funcionários</h1>\n    </ion-row>\n  </ion-grid>\n\n  <ion-card>\n    <ion-row align-items-center>\n      <form  class="form" (ngSubmit)="cadastrar()" #loginForm="ngForm">\n        <ion-list >\n          <ion-item>\n            <ion-label floating>Nome</ion-label>\n            <ion-input type="text" name="nome" [(ngModel)]="funcionario.nome" required minlength = \'2\' maxlength="50"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label floating>Email</ion-label>\n            <ion-input type="email" name="email" [(ngModel)]="funcionario.email" \n            pattern="^[a-zA-Z0-9.!#$%&\'*+/=?^_`~-]+@[a-z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" \n            required></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Senha</ion-label>\n            <ion-input type="password" name="senha" [(ngModel)]="funcionario.senha" required minlength= \'8\'></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Cargo</ion-label>\n            <ion-input type="text" name="cargo" [(ngModel)]="funcionario.cargo" required minlength= \'7\'></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Perfil do Github</ion-label>\n            <ion-input type="text" name="perfilGithub" [(ngModel)]="funcionario.perfilGithub" required minlength= \'2\' maxlength = \'100\' ></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Habilidades</ion-label>\n            <ion-input type="text" name="habilidades" [(ngModel)]="funcionario.habilidades" required></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>ROOT</ion-label>\n            <ion-checkbox color="blue" name="root" checked="true" [(ngModel)]="root" ></ion-checkbox>\n          </ion-item>\n  \n          <ion-item>\n            <br>\n            <br>\n            <ion-row justify-content-center align-items-center>\n              <button type="submit" [disabled]="loginForm.invalid" ion-button color="primary" >CADASTRAR</button>\n              <button ion-button color="danger" (click)="goBack()">CANCELAR</button>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n      </form>\n    </ion-row>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]])
     ], CadastroFuncionariosPage);
     return CadastroFuncionariosPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=cadastro-funcionarios.js.map
@@ -281,6 +284,7 @@ var LoginPage = /** @class */ (function () {
                 _this.criarToast("Usuário não encontrado!");
             }
             else {
+                _this.funcionario = res.body;
                 _this.navCtrl.push('InicialPage', { funcionario: _this.funcionario });
             }
         });
@@ -320,6 +324,7 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios_cadastro_funcionarios__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(77);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -332,19 +337,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FuncionariosPage = /** @class */ (function () {
-    function FuncionariosPage(modalCtrl, alertCtrl, navCtrl, navParams) {
+    function FuncionariosPage(modalCtrl, alertCtrl, navCtrl, navParams, http) {
         this.modalCtrl = modalCtrl;
         this.alertCtrl = alertCtrl;
         this.navCtrl = navCtrl;
+        this.http = http;
         this.funcionario = navParams.get('funcionario');
+        this.buscarFuncionarios();
     }
     FuncionariosPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FuncionariosPage');
     };
-    FuncionariosPage.prototype.presentModal = function (nome) {
-        console.log(nome);
-        var modal = this.modalCtrl.create('ModalPage', { nome: nome });
+    FuncionariosPage.prototype.presentModal = function (func) {
+        var modal = this.modalCtrl.create('ModalPage', { funcionario: func });
         modal.present();
     };
     FuncionariosPage.prototype.showConfirm = function () {
@@ -387,17 +394,23 @@ var FuncionariosPage = /** @class */ (function () {
         alert.present();
     };
     FuncionariosPage.prototype.ehRoot = function () {
-        console.log(this.funcionario.nome);
         return this.funcionario.tipo == 'ROOT';
+    };
+    FuncionariosPage.prototype.buscarFuncionarios = function () {
+        var _this = this;
+        var url = "http://localhost:8081/funcionarios/";
+        this.http.get(url, { observe: 'response' }).subscribe(function (res) {
+            _this.funcionarios = res.body;
+        });
     };
     FuncionariosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-funcionarios',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="action-sheets-basic-page">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Funcionarios</h1>\n    </ion-row>\n  </ion-grid>\n\n  <ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>Glaymar</h2>\n      <p>Estagiario</p>\n    </ion-item>\n    <ion-card-content>\n      <p>Habilidades ..... do funcionario</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button ion-button icon-start primary small>\n          Editar\n        </button>\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(\'glaymar\')" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small>\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>Mailson</h2>\n      <p>Estagiario</p>\n    </ion-item>\n    <ion-card-content>\n      <p>Habilidades ..... do funcionario</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button ion-button icon-start primary small>\n          Editar\n        </button>\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(\'Mailson\')" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small>\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>Flávio</h2>\n      <p>Estagiario</p>\n    </ion-item>\n    <ion-card-content>\n      <p>Habilidades ..... do funcionario</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button class="btn" ion-button icon-start primary small>\n          Editar\n        </button>\n\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(\'Flávio\')" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small>\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n  <ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>Flávio</h2>\n      <p>Estagiario</p>\n    </ion-item>\n    <ion-card-content>\n      <p>Habilidades ..... do funcionario</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button class="btn" ion-button icon-start primary small>\n          Editar\n        </button>\n\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(\'Flávio\')" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small>\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-card><ion-card>\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>Flávio</h2>\n      <p>Estagiario</p>\n    </ion-item>\n    <ion-card-content>\n      <p>Habilidades ..... do funcionario</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button class="btn" ion-button icon-start primary small>\n          Editar\n        </button>\n\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(\'Flávio\')" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small>\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n\n  <ion-fab bottom right>\n    <button ion-fab fab-fixed (click)="cadastrarFuncionario()" [hidden]="!ehRoot()">\n      <ion-icon name="add" is-active="false"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/,
+            selector: 'page-funcionarios',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="action-sheets-basic-page">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Funcionarios</h1>\n    </ion-row>\n  </ion-grid>\n\n  <ion-card *ngFor="let func of funcionarios">\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>{{func.nome}}</h2>\n      <p>{{func.cargo}}</p>\n    </ion-item>\n    <ion-card-content>\n      <p>{{func.habilidades}}</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button class="btn" ion-button icon-start primary small>\n          Editar\n        </button>\n\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(func)" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm()" color="danger" small [hidden]="!ehRoot()">\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n\n  <ion-fab bottom right>\n    <button ion-fab fab-fixed (click)="cadastrarFuncionario()" [hidden]="!ehRoot()">\n      <ion-icon name="add" is-active="false"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _e || Object])
     ], FuncionariosPage);
     return FuncionariosPage;
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=funcionarios.js.map

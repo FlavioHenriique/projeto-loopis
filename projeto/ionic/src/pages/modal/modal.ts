@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, ViewController } from 'ionic-angular';
 import * as $ from 'jquery';
-
-
-/**
- * Generated class for the ModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Funcionario } from '../../model/Funcionario';
 
 @IonicPage(
   {
@@ -21,13 +14,14 @@ import * as $ from 'jquery';
 })
 export class ModalPage {
 
+  private funcionario : Funcionario;
+
   constructor(private navParams: NavParams, private view: ViewController) {
-    console.log( navParams.get('nome'));
-    //document.getElementById("funcionario").innerHTML =  navParams.get('nome');  
+    this.funcionario = navParams.get('funcionario');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
+    
   }
 
   closeModal(){

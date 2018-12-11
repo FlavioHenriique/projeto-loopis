@@ -56,32 +56,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the ModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 var ModalPage = /** @class */ (function () {
     function ModalPage(navParams, view) {
         this.navParams = navParams;
         this.view = view;
-        console.log(navParams.get('nome'));
-        //document.getElementById("funcionario").innerHTML =  navParams.get('nome');  
+        this.funcionario = navParams.get('funcionario');
     }
     ModalPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ModalPage');
     };
     ModalPage.prototype.closeModal = function () {
         this.view.dismiss();
     };
     ModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-modal',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/modal/modal.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title id="funcionario">Nome do Funcionario</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)= "closeModal()">Close</button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding class="action-sheets-basic-page body">\n    \n  \n    <div class="form-box">\n      <ion-row justify-content-center align-items-center>\n        <ion-list class="form">\n          <br/><br/>\n          <ion-item>\n            <ion-label>Nome: Mailson Dennis</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Email: mailsondennis@gmail.com</ion-label>\n          </ion-item>\n\n          <ion-item>\n            <ion-label>Cargo: Estagiario</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Perfil do Github: MailsonD</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Habilidades:<br>\n                <ul>\n                  <li>HTML5</li>\n                  <li>CSS3</li>\n                  <li>Linguagem C</li>\n                  <li>JavaScript</li>\n                  <li>Java SE</li>\n                  <li>Ionic</li>\n                </ul>\n            </ion-label>\n          </ion-item>\n        \n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/modal/modal.html"*/,
+            selector: 'page-modal',template:/*ion-inline-start:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/modal/modal.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title id="funcionario">{{funcionario.nome}}</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)= "closeModal()">Close</button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding class="action-sheets-basic-page body">\n    \n  \n    <div class="form-box">\n      <ion-row justify-content-center align-items-center>\n        <ion-list class="form">\n          <br/><br/>\n          <ion-item>\n            <ion-label>Nome: {{funcionario.nome}}</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Email: {{funcionario.email}}</ion-label>\n          </ion-item>\n\n          <ion-item>\n            <ion-label>Cargo: {{funcionario.cargo}}</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Perfil do Github: {{funcionario.perfilGithub}}</ion-label>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>Habilidades:<br>\n                <ul>\n                  <li>HTML5</li>\n                  <li>CSS3</li>\n                  <li>Linguagem C</li>\n                  <li>JavaScript</li>\n                  <li>Java SE</li>\n                  <li>Ionic</li>\n                </ul>\n            </ion-label>\n          </ion-item>\n        \n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/flavio/ADS/Loopis/projeto-loopis/projeto/ionic/src/pages/modal/modal.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]) === "function" && _b || Object])
     ], ModalPage);
     return ModalPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=modal.js.map

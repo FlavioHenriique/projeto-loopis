@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, ModalController, AlertController, NavController, NavParams } from 'ionic-angular';
 import { Funcionario } from '../../model/Funcionario';
 import { CadastroFuncionariosPage } from '../cadastro-funcionarios/cadastro-funcionarios';
-
+import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -13,18 +13,23 @@ export class FuncionariosPage {
 
   root: boolean;
   funcionario: Funcionario;
-  
-  constructor(public modalCtrl: ModalController, public alertCtrl: AlertController,public navCtrl: NavController, navParams: NavParams) { 
-    
+  funcionarios: any;
+
+  constructor(public modalCtrl: ModalController,
+    public alertCtrl: AlertController,
+    public navCtrl: NavController,
+    navParams: NavParams,
+    public http: HttpClient) {
+
     this.funcionario = navParams.get('funcionario');
+    this.buscarFuncionarios();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FuncionariosPage');
   }
-  presentModal(nome) {
-    console.log(nome);
-    const modal = this.modalCtrl.create('ModalPage', { nome: nome });
+  presentModal(func) {
+    const modal = this.modalCtrl.create('ModalPage', { funcionario: func });
     modal.present();
   }
 
@@ -70,8 +75,14 @@ export class FuncionariosPage {
     alert.present();
   }
 
-  ehRoot(){
-    console.log(this.funcionario.nome);
+  ehRoot() {
     return this.funcionario.tipo == 'ROOT';
+  }
+
+  buscarFuncionarios() {
+    let url = "http://localhost:8081/funcionarios/";
+    this.http.get(url, { observe: 'response' }).subscribe(res => {
+      this.funcionarios = res.body;
+    });
   }
 }

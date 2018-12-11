@@ -11,87 +11,17 @@
     </ion-row>
   </ion-grid>
 
-  <ion-card>
+  <ion-card *ngFor="let func of funcionarios">
 
     <ion-item>
       <ion-avatar item-start>
         <img src="/../assets/imgs/teste.jpeg">
       </ion-avatar>
-      <h2>Glaymar</h2>
-      <p>Estagiario</p>
+      <h2>{{func.nome}}</h2>
+      <p>{{func.cargo}}</p>
     </ion-item>
     <ion-card-content>
-      <p>Habilidades ..... do funcionario</p>
-    </ion-card-content>
-
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-start primary small>
-          Editar
-        </button>
-      </ion-col>
-      <ion-col center text-center>
-        <button ion-button icon-start (click)="presentModal('glaymar')" primary small>
-          Detalhes
-        </button>
-      </ion-col>
-      <ion-col center text-right>
-        <button ion-button icon-start (click)="showConfirm()" color="danger" small>
-          Excluir
-        </button>
-      </ion-col>
-    </ion-row>
-
-  </ion-card>
-
-
-
-  <ion-card>
-
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="/../assets/imgs/teste.jpeg">
-      </ion-avatar>
-      <h2>Mailson</h2>
-      <p>Estagiario</p>
-    </ion-item>
-    <ion-card-content>
-      <p>Habilidades ..... do funcionario</p>
-    </ion-card-content>
-
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-start primary small>
-          Editar
-        </button>
-      </ion-col>
-      <ion-col center text-center>
-        <button ion-button icon-start (click)="presentModal('Mailson')" primary small>
-          Detalhes
-        </button>
-      </ion-col>
-      <ion-col center text-right>
-        <button ion-button icon-start (click)="showConfirm()" color="danger" small>
-          Excluir
-        </button>
-      </ion-col>
-    </ion-row>
-
-  </ion-card>
-
-
-
-  <ion-card>
-
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="/../assets/imgs/teste.jpeg">
-      </ion-avatar>
-      <h2>Flávio</h2>
-      <p>Estagiario</p>
-    </ion-item>
-    <ion-card-content>
-      <p>Habilidades ..... do funcionario</p>
+      <p>{{func.habilidades}}</p>
     </ion-card-content>
 
     <ion-row>
@@ -102,75 +32,12 @@
 
       </ion-col>
       <ion-col center text-center>
-        <button ion-button icon-start (click)="presentModal('Flávio')" primary small>
+        <button ion-button icon-start (click)="presentModal(func)" primary small>
           Detalhes
         </button>
       </ion-col>
       <ion-col center text-right>
-        <button ion-button icon-start (click)="showConfirm()" color="danger" small>
-          Excluir
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-card>
-
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="/../assets/imgs/teste.jpeg">
-      </ion-avatar>
-      <h2>Flávio</h2>
-      <p>Estagiario</p>
-    </ion-item>
-    <ion-card-content>
-      <p>Habilidades ..... do funcionario</p>
-    </ion-card-content>
-
-    <ion-row>
-      <ion-col>
-        <button class="btn" ion-button icon-start primary small>
-          Editar
-        </button>
-
-      </ion-col>
-      <ion-col center text-center>
-        <button ion-button icon-start (click)="presentModal('Flávio')" primary small>
-          Detalhes
-        </button>
-      </ion-col>
-      <ion-col center text-right>
-        <button ion-button icon-start (click)="showConfirm()" color="danger" small>
-          Excluir
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card><ion-card>
-
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="/../assets/imgs/teste.jpeg">
-      </ion-avatar>
-      <h2>Flávio</h2>
-      <p>Estagiario</p>
-    </ion-item>
-    <ion-card-content>
-      <p>Habilidades ..... do funcionario</p>
-    </ion-card-content>
-
-    <ion-row>
-      <ion-col>
-        <button class="btn" ion-button icon-start primary small>
-          Editar
-        </button>
-
-      </ion-col>
-      <ion-col center text-center>
-        <button ion-button icon-start (click)="presentModal('Flávio')" primary small>
-          Detalhes
-        </button>
-      </ion-col>
-      <ion-col center text-right>
-        <button ion-button icon-start (click)="showConfirm()" color="danger" small>
+        <button ion-button icon-start (click)="showConfirm()" color="danger" small [hidden]="!ehRoot()">
           Excluir
         </button>
       </ion-col>

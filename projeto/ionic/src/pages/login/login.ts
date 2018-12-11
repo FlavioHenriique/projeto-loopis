@@ -30,7 +30,7 @@ export class LoginPage {
       if (res.status != 200) {
         this.criarToast("Usuário não encontrado!");
       } else {
-        
+        this.funcionario = res.body;
         this.navCtrl.push('InicialPage', {funcionario: this.funcionario});
       }
     });
