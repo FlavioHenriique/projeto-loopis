@@ -178,7 +178,7 @@
   </ion-card>
 
   <ion-fab bottom right>
-    <button ion-fab fab-fixed>
+    <button ion-fab fab-fixed (click)="cadastrarFuncionario()" [hidden]="!ehRoot()">
       <ion-icon name="add" is-active="false"></ion-icon>
     </button>
   </ion-fab>

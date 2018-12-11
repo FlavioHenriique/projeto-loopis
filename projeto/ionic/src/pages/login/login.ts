@@ -25,13 +25,12 @@ export class LoginPage {
 
   login() {
     this.funcionario.tipo = (this.root) ? 'ROOT' : 'NORMAL';
-    //let json = { email: this.email, senha: this.senha, tipo: tipo };
     let url = "http://localhost:8081/funcionarios/login";
     this.http.post(url, this.funcionario, { observe: 'response' }).subscribe(res => {
       if (res.status != 200) {
         this.criarToast("Usuário não encontrado!");
       } else {
-        this.funcionario = res.body;
+        
         this.navCtrl.push('InicialPage', {funcionario: this.funcionario});
       }
     });

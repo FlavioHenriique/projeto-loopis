@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController,AlertController } from 'ionic-angular';
+import { IonicPage, ModalController, AlertController, NavController, NavParams } from 'ionic-angular';
 import { Funcionario } from '../../model/Funcionario';
+import { CadastroFuncionariosPage } from '../cadastro-funcionarios/cadastro-funcionarios';
 
 
 @IonicPage()
@@ -12,15 +13,18 @@ export class FuncionariosPage {
 
   root: boolean;
   funcionario: Funcionario;
-
-  constructor(public modalCtrl: ModalController,public alertCtrl: AlertController) { }
+  
+  constructor(public modalCtrl: ModalController, public alertCtrl: AlertController,public navCtrl: NavController, navParams: NavParams) { 
+    
+    this.funcionario = navParams.get('funcionario');
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FuncionariosPage');
   }
   presentModal(nome) {
     console.log(nome);
-    const modal = this.modalCtrl.create('ModalPage',{nome: nome});
+    const modal = this.modalCtrl.create('ModalPage', { nome: nome });
     modal.present();
   }
 
@@ -51,5 +55,23 @@ export class FuncionariosPage {
       ]
     });
     confirm.present();
+  }
+
+  cadastrarFuncionario() {
+    this.navCtrl.push(CadastroFuncionariosPage, {});
+  }
+
+  presentAlert(titulo, msg) {
+    let alert = this.alertCtrl.create({
+      title: titulo,
+      subTitle: msg,
+      buttons: ['Ok']
+    });
+    alert.present();
+  }
+
+  ehRoot(){
+    console.log(this.funcionario.nome);
+    return this.funcionario.tipo == 'ROOT';
   }
 }

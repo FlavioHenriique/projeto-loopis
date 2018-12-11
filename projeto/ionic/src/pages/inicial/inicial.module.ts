@@ -8,6 +8,7 @@ import { InicialPage } from './inicial';
   ],
   imports: [
     IonicPageModule.forChild(InicialPage),
+    
   ],
 })
 export class InicialPageModule {}

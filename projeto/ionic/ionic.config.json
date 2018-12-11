@@ -1,5 +1,7 @@
 {
   "name": "projeto_loopis",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

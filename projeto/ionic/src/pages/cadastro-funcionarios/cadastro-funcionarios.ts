@@ -29,6 +29,7 @@ export class CadastroFuncionariosPage {
     private alertCtrl: AlertController,
     private formBuilder: FormBuilder) {
     this.funcionario = new Funcionario();
+    
 
   }
 

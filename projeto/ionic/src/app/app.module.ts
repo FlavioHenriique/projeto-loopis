@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
+import { FuncionariosPageModule } from '../pages/funcionarios/funcionarios.module';
+import { CadastroFuncionariosPageModule } from '../pages/cadastro-funcionarios/cadastro-funcionarios.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { LoginPage } from '../pages/login/login';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    FuncionariosPageModule,
+    CadastroFuncionariosPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

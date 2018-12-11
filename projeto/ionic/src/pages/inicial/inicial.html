@@ -1,13 +1,19 @@
-
 <ion-header>
-
   <ion-navbar color="primary">
-    <ion-title>LOOPIS - Página inicial</ion-title>
+    <ion-title>LOOPIS - Tela Inicial</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-nome: {{funcionario.nome}}
+<ion-content>
+  <ion-tabs>
+    
+    <ion-tab [root]="pagFuncionarios" tabTitle="Funcionários" tabIcon="contact" [rootParams]="params"></ion-tab>
+    <ion-tab [root]="pagProjetos" tabTitle="Projetos" tabIcon="code-working"></ion-tab>
+  </ion-tabs>
 </ion-content>
