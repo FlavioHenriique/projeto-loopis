@@ -68,10 +68,13 @@ var CadastroFuncionariosPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-cadastro-funcionarios',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/'<ion-header class="header">\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="action-sheets-basic-page body">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Cadastro de Funcionários</h1>\n    </ion-row>\n  </ion-grid>\n\n  <ion-card>\n    <ion-row align-items-center>\n      <form  class="form" (ngSubmit)="cadastrar()" #loginForm="ngForm">\n        <ion-list >\n          <ion-item>\n            <ion-label floating>Nome</ion-label>\n            <ion-input type="text" name="nome" [(ngModel)]="funcionario.nome" required minlength = \'2\' maxlength="50"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label floating>Email</ion-label>\n            <ion-input type="email" name="email" [(ngModel)]="funcionario.email" \n            pattern="^[a-zA-Z0-9.!#$%&\'*+/=?^_`~-]+@[a-z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" \n            required></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Senha</ion-label>\n            <ion-input type="password" name="senha" [(ngModel)]="funcionario.senha" required minlength= \'8\'></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Cargo</ion-label>\n            <ion-input type="text" name="cargo" [(ngModel)]="funcionario.cargo" required minlength= \'7\'></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Perfil do Github</ion-label>\n            <ion-input type="text" name="perfilGithub" [(ngModel)]="funcionario.perfilGithub" required minlength= \'2\' maxlength = \'100\' ></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label floating>Habilidades</ion-label>\n            <ion-input type="text" name="habilidades" [(ngModel)]="funcionario.habilidades" required></ion-input>\n          </ion-item>\n  \n          <ion-item>\n            <ion-label>ROOT</ion-label>\n            <ion-checkbox color="blue" name="root" checked="true" [(ngModel)]="root" ></ion-checkbox>\n          </ion-item>\n  \n          <ion-item>\n            <br>\n            <br>\n            <ion-row justify-content-center align-items-center>\n              <button type="submit" [disabled]="loginForm.invalid" ion-button color="primary" >CADASTRAR</button>\n              <button ion-button color="danger" (click)="goBack()">CANCELAR</button>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n      </form>\n    </ion-row>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/pages/cadastro-funcionarios/cadastro-funcionarios.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]])
     ], CadastroFuncionariosPage);
     return CadastroFuncionariosPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=cadastro-funcionarios.js.map
@@ -131,11 +134,11 @@ var map = {
 		157
 	],
 	"../pages/inicial/inicial.module": [
-		279,
+		280,
 		1
 	],
 	"../pages/modal/modal.module": [
-		280,
+		281,
 		0
 	]
 };
@@ -316,7 +319,7 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_funcionarios_cadastro_funcionarios__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__assets_ts_md5__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__assets_ts_md5__ = __webpack_require__(254);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -370,7 +373,7 @@ var FuncionariosPage = /** @class */ (function () {
                     text: 'Excluir',
                     handler: function (data) {
                         if (Object(__WEBPACK_IMPORTED_MODULE_4__assets_ts_md5__["a" /* md5 */])(data.senha) == _this.funcionario.senha) {
-                            var url = "http://localhost:8081/funcionarios/" + email + "";
+                            var url = "http://localhost:8081/funcionarios/" + email;
                             _this.http.delete(url, { observe: 'response' }).subscribe(function (res) {
                                 if (res.status != 200) {
                                     _this.presentAlert("Erro", "Aconteceu algo!");
@@ -415,7 +418,7 @@ var FuncionariosPage = /** @class */ (function () {
     };
     FuncionariosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-funcionarios',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="action-sheets-basic-page">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Funcionarios</h1>\n    </ion-row>\n  </ion-grid>\n\n  <ion-card *ngFor="let func of funcionarios">\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>{{func.nome}}</h2>\n      <p>{{func.cargo}}</p>\n    </ion-item>\n    <ion-card-content>\n      <p>{{func.habilidades}}</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button class="btn" ion-button icon-start primary small>\n          Editar\n        </button>\n\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(func)" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm(func)" color="danger" small [hidden]="!ehRoot()">\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n\n  <ion-fab bottom right>\n    <button ion-fab fab-fixed (click)="cadastrarFuncionario()" [hidden]="!ehRoot()">\n      <ion-icon name="add" is-active="false"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>'/*ion-inline-end:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/,
+            selector: 'page-funcionarios',template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>LOOPIS</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="action-sheets-basic-page">\n  <ion-grid>\n    <ion-row justify-content-center align-items-center>\n      <h1 id="title">Funcionarios</h1>\n    </ion-row>\n  </ion-grid>\n\n  <ion-card *ngFor="let func of funcionarios">\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="/../assets/imgs/teste.jpeg">\n      </ion-avatar>\n      <h2>{{func.nome}}</h2>\n      <p>{{func.cargo}}</p>\n    </ion-item>\n    <ion-card-content>\n      <p>{{func.habilidades}}</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button class="btn" ion-button icon-start primary small>\n          Editar\n        </button>\n\n      </ion-col>\n      <ion-col center text-center>\n        <button ion-button icon-start (click)="presentModal(func)" primary small>\n          Detalhes\n        </button>\n      </ion-col>\n      <ion-col center text-right>\n        <button ion-button icon-start (click)="showConfirm(func.email)" color="danger" small [hidden]="!ehRoot()">\n          Excluir\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n\n  <ion-fab bottom right>\n    <button ion-fab fab-fixed (click)="cadastrarFuncionario()" [hidden]="!ehRoot()">\n      <ion-icon name="add" is-active="false"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>'/*ion-inline-end:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/pages/funcionarios/funcionarios.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _e || Object])
     ], FuncionariosPage);
@@ -452,7 +455,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_funcionarios_funcionarios_module__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_cadastro_funcionarios_cadastro_funcionarios_module__ = __webpack_require__(156);
@@ -514,53 +517,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 278:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(201);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
-        platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            statusBar.styleDefault();
-            splashScreen.hide();
-        });
-    }
-    MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/app/app.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-    ], MyApp);
-    return MyApp;
-}());
-
-//# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 283:
+/***/ 254:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -768,6 +725,52 @@ var md5 = function (string) {
     return temp.toLowerCase();
 };
 //# sourceMappingURL=md5.js.map
+
+/***/ }),
+
+/***/ 279:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(201);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MyApp = /** @class */ (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            statusBar.styleDefault();
+            splashScreen.hide();
+        });
+    }
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/loopis/Documents/Mailson/Loopis/projeto-loopis/projeto/ionic/src/app/app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
 
 /***/ })
 

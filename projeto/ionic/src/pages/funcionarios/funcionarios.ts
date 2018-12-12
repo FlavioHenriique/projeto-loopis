@@ -57,7 +57,7 @@ export class FuncionariosPage {
           text: 'Excluir',
           handler: data => {
             if(md5(data.senha) == this.funcionario.senha){
-              let url = "http://localhost:8081/funcionarios/"+email+"";
+              let url = "http://localhost:8081/funcionarios/"+email;
               this.http.delete(url, { observe: 'response' }).subscribe(res => {
                 if(res.status != 200){
                   this.presentAlert("Erro","Aconteceu algo!");
