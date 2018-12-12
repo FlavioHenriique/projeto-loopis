@@ -3,7 +3,7 @@ import { IonicPage, ModalController, AlertController, NavController, NavParams }
 import { Funcionario } from '../../model/Funcionario';
 import { CadastroFuncionariosPage } from '../cadastro-funcionarios/cadastro-funcionarios';
 import { HttpClient } from '@angular/common/http';
-import {md5} from '../../assets/ts/md5';
+import { md5 } from '../../assets/ts/md5';
 
 
 @IonicPage()
@@ -56,17 +56,18 @@ export class FuncionariosPage {
         {
           text: 'Excluir',
           handler: data => {
-            if(md5(data.senha) == this.funcionario.senha){
-              let url = "http://localhost:8081/funcionarios/"+email;
+            if (md5(data.senha) == this.funcionario.senha) {
+              let url = "http://localhost:8081/funcionarios/" + email;
               this.http.delete(url, { observe: 'response' }).subscribe(res => {
-                if(res.status != 200){
-                  this.presentAlert("Erro","Aconteceu algo!");
-                }else{
-                  this.presentAlert("OK","UsuarioDeletado com sucesso");
+                if (res.status != 200) {
+                  this.presentAlert("Erro", "Aconteceu algo!");
+                } else {
+                  this.presentAlert("OK", "Usuario deletado com sucesso");
+                  this.buscarFuncionarios();
                 }
               });
-            }else{
-              this.presentAlert("Erro","Senha incorreta!");
+            } else {
+              this.presentAlert("Erro", "Senha incorreta!");
             }
           }
         }
@@ -99,7 +100,7 @@ export class FuncionariosPage {
     });
   }
 
-  toHash(s){
-    return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);              
+  toHash(s) {
+    return s.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
   }
 }
