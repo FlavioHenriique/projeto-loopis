@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Funcionario } from '../../model/Funcionario';
 import { FuncionariosPage } from '../funcionarios/funcionarios';
 import { ProjetosPage } from '../projetos/projetos';
+import { LoginPage } from '../login/login';
 
 
 
@@ -28,4 +29,8 @@ export class InicialPage {
     
   }
 
+  sair(){
+    this.funcionario = null;
+    this.navCtrl.push(LoginPage, {});
+  }
 }
