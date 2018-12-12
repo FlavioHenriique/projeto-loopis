@@ -12,7 +12,7 @@ import { Funcionario } from '../../model/Funcionario';
 export class LoginPage {
 
   root: boolean;
-  funcionario: Funcionario;
+  funcionario: any;
 
   constructor(public navCtrl: NavController,
     public platform: Platform,

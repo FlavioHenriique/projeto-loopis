@@ -8,4 +8,8 @@ export class Funcionario {
         public tipo?: string,
         public habilidades?: string
     ) { }
+
+    public autenticarSenha(senha:string){
+        return this.senha == senha;
+    }
 }

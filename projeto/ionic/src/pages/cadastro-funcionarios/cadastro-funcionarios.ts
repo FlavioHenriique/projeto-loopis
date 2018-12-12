@@ -29,21 +29,7 @@ export class CadastroFuncionariosPage {
     private alertCtrl: AlertController,
     private formBuilder: FormBuilder) {
     this.funcionario = new Funcionario();
-    
 
-  }
-
-  ngOnInit(): any {
-    this.validations_form = this.formBuilder.group({
-      nome: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(3)
-      ]),
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ]))
-    });
   }
 
   cadastrar() {

@@ -3,6 +3,8 @@ import { IonicPage, ModalController, AlertController, NavController, NavParams }
 import { Funcionario } from '../../model/Funcionario';
 import { CadastroFuncionariosPage } from '../cadastro-funcionarios/cadastro-funcionarios';
 import { HttpClient } from '@angular/common/http';
+import {md5} from '../../assets/ts/md5';
+
 
 @IonicPage()
 @Component({
@@ -33,7 +35,7 @@ export class FuncionariosPage {
     modal.present();
   }
 
-  showConfirm() {
+  showConfirm(email: String) {
     const confirm = this.alertCtrl.create({
       title: 'Excluir Funcionário',
       message: 'Tem certeza de que deseja excluir este funcionário?',
@@ -47,14 +49,25 @@ export class FuncionariosPage {
       buttons: [
         {
           text: 'Cancelar',
-          handler: () => {
+          handler: data => {
             console.log('Disagree clicked');
           }
         },
         {
           text: 'Excluir',
-          handler: () => {
-            console.log('Agree clicked');
+          handler: data => {
+            if(md5(data.senha) == this.funcionario.senha){
+              let url = "http://localhost:8081/funcionarios/"+email+"";
+              this.http.delete(url, { observe: 'response' }).subscribe(res => {
+                if(res.status != 200){
+                  this.presentAlert("Erro","Aconteceu algo!");
+                }else{
+                  this.presentAlert("OK","UsuarioDeletado com sucesso");
+                }
+              });
+            }else{
+              this.presentAlert("Erro","Senha incorreta!");
+            }
           }
         }
       ]
@@ -84,5 +97,9 @@ export class FuncionariosPage {
     this.http.get(url, { observe: 'response' }).subscribe(res => {
       this.funcionarios = res.body;
     });
+  }
+
+  toHash(s){
+    return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);              
   }
 }
