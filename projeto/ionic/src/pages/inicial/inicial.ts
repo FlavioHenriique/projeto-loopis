@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Funcionario } from '../../model/Funcionario';
 import { FuncionariosPage } from '../funcionarios/funcionarios';
-import { CadastroFuncionariosPage } from '../cadastro-funcionarios/cadastro-funcionarios';
+import { ProjetosPage } from '../projetos/projetos';
 
 
 
@@ -15,7 +15,7 @@ export class InicialPage {
 
   public funcionario: Funcionario;
   private pagFuncionarios = FuncionariosPage;
-  private pagProjetos = CadastroFuncionariosPage;
+  private pagProjetos = ProjetosPage;
   params : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

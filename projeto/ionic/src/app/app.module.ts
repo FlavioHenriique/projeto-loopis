@@ -9,23 +9,26 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { FuncionariosPageModule } from '../pages/funcionarios/funcionarios.module';
 import { CadastroFuncionariosPageModule } from '../pages/cadastro-funcionarios/cadastro-funcionarios.module';
+import { ProjetosPage } from '../pages/projetos/projetos';
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage
+    LoginPage,
+    ProjetosPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     FuncionariosPageModule,
-    CadastroFuncionariosPageModule
+    CadastroFuncionariosPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage
+    LoginPage,
+    ProjetosPage,
   ],
   providers: [
     StatusBar,

@@ -9,7 +9,4 @@ export class Funcionario {
         public habilidades?: string
     ) { }
 
-    public autenticarSenha(senha:string){
-        return this.senha == senha;
-    }
 }
