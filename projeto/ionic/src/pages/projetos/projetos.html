@@ -15,12 +15,14 @@
         </ion-thumbnail>
         <h2>{{projeto.titulo}}</h2>
         <p>DATA DE ENTREGA - {{projeto.dataEntrega}} </p>
-        <button ion-button color="danger" item-right (click)="excluir(projeto.id)"><ion-icon name="trash" ></ion-icon></button>
+        <button ion-button color="danger" item-right (click)="excluir(projeto.id)" [hidden]="!ehRoot()">
+          <ion-icon name="trash"></ion-icon>
+        </button>
       </ion-item>
     </ion-item-sliding>
   </ion-list>
 
-  <ion-fab bottom right>
+  <ion-fab bottom right>  
     <button ion-fab fab-fixed (click)="cadastrarProjeto()" [hidden]="!ehRoot()">
       <ion-icon name="add" is-active="false"></ion-icon>
     </button>
