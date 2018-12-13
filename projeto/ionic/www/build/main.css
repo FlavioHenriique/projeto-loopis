@@ -25682,6 +25682,10 @@ page-cadastro-funcionarios .form {
   width: 100%;
 }
 
+page-cadastro-projetos .form {
+  width: 100%;
+}
+
 page-login #title {
   font-size: 50px;
 }

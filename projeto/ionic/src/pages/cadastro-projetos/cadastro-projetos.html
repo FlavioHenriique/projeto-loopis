@@ -2,7 +2,7 @@
 
   <ion-card>
     <ion-row align-items-center>
-      <form class="form" (ngSubmit)="cadastrar()" #loginForm="ngForm">
+      <form class="form" (ngSubmit)="cadastrar()" #cadastroForm="ngForm">
         <ion-list>
           <ion-item>
             <ion-label floating>Título</ion-label>
@@ -15,16 +15,16 @@
           </ion-item>
           <ion-item>
             <ion-label floating>Email do contratante</ion-label>
-            <ion-input type="text" name="emailContratante" [(ngModel)]="projeto.emailContratante" required minlength='2'
-              maxlength="50"></ion-input>
+            <ion-input type="text" name="emailContratante" [(ngModel)]="projeto.emailContratante" required 
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`~-]+@[a-z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label floating>Telefone</ion-label>
-            <ion-input type="text" name="tel" [(ngModel)]="projeto.telefone" required minlength='2' maxlength="50"></ion-input>
+            <ion-input type="text" name="tel" [(ngModel)]="projeto.telefone" required></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label floating>Data de entrega</ion-label>
-            <ion-input type="text" name="data" [(ngModel)]="projeto.dataEntrega" required minlength='2' maxlength="50"></ion-input>
+            <ion-label >Entrega</ion-label><br>
+            <ion-input type="date" name="data" [(ngModel)]="projeto.dataEntrega" required ></ion-input>
           </ion-item>
           <ion-item>
             <ion-label floating>Descrição</ion-label>
@@ -35,7 +35,7 @@
             <br>
             <br>
             <ion-row justify-content-center align-items-center>
-              <button type="submit" [disabled]="loginForm.invalid" ion-button color="primary">CADASTRAR</button>
+              <button type="submit" [disabled]="cadastroForm.invalid" ion-button color="primary">CADASTRAR</button>
               <button ion-button color="danger" (click)="goBack()">CANCELAR</button>
             </ion-row>
           </ion-item>
