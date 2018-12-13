@@ -1,0 +1,46 @@
+<ion-content padding>
+
+  <ion-card>
+    <ion-row align-items-center>
+      <form class="form" (ngSubmit)="cadastrar()" #loginForm="ngForm">
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Título</ion-label>
+            <ion-input type="text" name="titulo" [(ngModel)]="projeto.titulo" required minlength='2' maxlength="50"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Nome do contratante</ion-label>
+            <ion-input type="text" name="contratante" [(ngModel)]="projeto.nomeContratante" required minlength='2'
+              maxlength="50"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Email do contratante</ion-label>
+            <ion-input type="text" name="emailContratante" [(ngModel)]="projeto.emailContratante" required minlength='2'
+              maxlength="50"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Telefone</ion-label>
+            <ion-input type="text" name="tel" [(ngModel)]="projeto.telefone" required minlength='2' maxlength="50"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Data de entrega</ion-label>
+            <ion-input type="text" name="data" [(ngModel)]="projeto.dataEntrega" required minlength='2' maxlength="50"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Descrição</ion-label>
+            <ion-textarea type="text" name="descricao" [(ngModel)]="projeto.descricao" rows="5" required minlength='2'></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <br>
+            <br>
+            <ion-row justify-content-center align-items-center>
+              <button type="submit" [disabled]="loginForm.invalid" ion-button color="primary">CADASTRAR</button>
+              <button ion-button color="danger" (click)="goBack()">CANCELAR</button>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-row>
+  </ion-card>
+</ion-content>

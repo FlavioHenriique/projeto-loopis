@@ -5,6 +5,7 @@ export class Projeto {
         public nomeContratante?: string,
         public emailContratante?: string,
         public descricao?: string,
+        public dataEntrega?:Date
     ) { }
 
 }

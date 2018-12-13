@@ -20,7 +20,7 @@ export class FuncionariosPage {
   constructor(public modalCtrl: ModalController,
     public alertCtrl: AlertController,
     public navCtrl: NavController,
-    navParams: NavParams,
+    public navParams: NavParams,
     public http: HttpClient) {
 
     this.funcionario = navParams.get('funcionario');

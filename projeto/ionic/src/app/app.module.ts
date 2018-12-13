@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { FuncionariosPageModule } from '../pages/funcionarios/funcionarios.module';
 import { CadastroFuncionariosPageModule } from '../pages/cadastro-funcionarios/cadastro-funcionarios.module';
 import { ProjetosPage } from '../pages/projetos/projetos';
+import { CadastroProjetosPageModule } from '../pages/cadastro-projetos/cadastro-projetos.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProjetosPage } from '../pages/projetos/projetos';
     IonicModule.forRoot(MyApp),
     FuncionariosPageModule,
     CadastroFuncionariosPageModule,
+    CadastroProjetosPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Funcionario } from '../../model/Funcionario';
+import { HttpClient } from '@angular/common/http';
+import { CadastroProjetosPage } from '../cadastro-projetos/cadastro-projetos';
 
-/**
- * Generated class for the ProjetosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +12,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProjetosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  funcionario: Funcionario;
+  projetos: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
+    console.log(navParams.data);
+    this.funcionario = navParams.get('funcionario');
+    this.buscarProjetos();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProjetosPage');
+    
   }
 
+  buscarProjetos(){
+    let url = "http://localhost:8081/projetos/";
+    this.http.get(url,{observe:'response'}).subscribe(res=>{
+      this.projetos = res.body;
+    });
+  }
+
+  ehRoot() {
+    return this.funcionario.tipo == 'ROOT';
+  }
+
+  cadastrarProjeto(){
+    this.navCtrl.push(CadastroProjetosPage, {});    
+  }
 }
